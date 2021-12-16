@@ -2,33 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Under elsewhere skies (Taper #6)</title>
+	<title>Under elsewhere skies | patternseeing</title>
 
-<!-- “Under elsewhere skies” Copyright (C) 2021 AUTHOR
-
-Copying and distribution of this file, with or without modification,
-are permitted in any medium without royalty provided the copyright
-notice and this notice are preserved. This file is offered as-is,
-without any warranty.
-
-This is from Taper #6: A Throw of the Dice, Spring 2021:
-
-https://taper.badquart.to/6/under_elsewhere_skies.html
-
-Sky, the vast canvas above at times, gives us stunning colors and lights,
-often become part of a memorable experience evoking deep human emotions
-and feelings about the world. We capture and express our feelings about
-such moments with fellow beings under this vast canvas.
-Exploring this thought further on the speculation of
-us becoming a multi-planetary species, What stunning atmospheric
-experiences we could witness on other planets?
-And what emotions do they evoke?
-'Under elsewhere skies' is a generative system randomly sharing memories
-from imaginary worlds/planets.
-A new memory under a unique sky background is shared every 6 seconds
-with the arbitrary location name, coordinates, and date.
-
--->
 
 	<style>
 	body { margin:0 ; overflow:hidden }
@@ -42,15 +17,75 @@ with the arbitrary location name, coordinates, and date.
 <body>
 <header id=nav>
 	<h1>
-		<a href="index.html">Taper #6 :
-		A Throw of the Dice</a> : Spring 2021 <br>
 		<a href="template.html">“Under elsewhere skies”</a> by
 		<a href="about.html#AUTHOR">patternseeing</a> :
-		<a href="prev.html">&lt;&lt;</a> &mdash;
-		<a href="next.html">&gt;&gt;</a>
+		
 	</h1>
 </header>
-<style>#bc{transition:background 6s;width:100%;height:100%;position:fixed;background:radial-gradient(white,rgba(0,0,120,.6));animation: fadein 6s infinite;}#fw{top:40%;font-size:20px ;font-family:monospace;width:60%;margin-left: 20%;text-align:center;position:absolute;animation: fadein 6s infinite;animation: cre 6s infinite;}@-webkit-keyframes fadein{0%,100%{opacity:0}50%{opacity:1}}@-webkit-keyframes cre {0%,100%{color: rgba(0,0,0,0)}50%{color:white}}</style><div id ="bc"> </div><div id ="fw"><div id="msg" style="font-size:60px; ">Under elsewhere skies</div><br><span id="loc" style=" padding-top: 1%;margin-top:1%;border-top: 1px solid white"> </span></div><script>var clr = '#';var clr2 = '#000000';var date='';function bcolor(){var clt = '0123456789ABCDEF';var ts= '0123456789';var al= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';var name ='';var adj = ['Beautiful','Joyful','Amazing','Lonely','Melancholic','Meandering','starless','What a','warm'];var days = ['day','morning','evening','midnight','dream','river','sun','fields','sea','weather','moon','memories'];var ang = ['0','-70','-140','180','120','90'];var angle='';var ran = Math.random();var pos='';date = '';clr = '#';for (var i = 0; i < 6; i++){clr += clt[Math.floor(Math.random() * 16)];date += ts.charAt(Math.floor(Math.random() * 10));name += al.charAt(Math.floor(Math.random() * 36));} pos = Math.floor(ran* 100)+'% ';angle = 'radial-gradient(farthest-corner at '+ pos+ ' '+pos+',white,'+ clr+',' + clr2+')';console.log(angle);clr2 = clr;var lt = (ran * (90 - (-90)) + (-90) ).toFixed(3);var lg = (ran * (180 - (-180)) + (-180)).toFixed(3);var date = (ran * (999 - (0)) + (0)).toFixed(0)+' / '+(ran * (199 - (0)) + (0)).toFixed(0)+' / '+(ran * (99 - (10)) + (10)).toFixed(0);document.getElementById("msg").innerHTML = adj[Math.floor(Math.random() * 10)]+' '+days[Math.floor(ran * 12)] ;document.getElementById("loc").innerHTML = '@ '+name+', '+' '+lt +' '+lg +' on '+''+date ;document.getElementById("bc").style.background = angle;}setInterval (bcolor, 6000);</script>
+<style>
+	#bc{
+		transition:background 6s;
+		width:100%;
+		height:100%;
+		position:fixed;
+		background:radial-gradient(white,rgba(0,0,120,.6));
+		animation: fadein 6s infinite;
+	}
+	#fw
+	{
+		top:40%;
+		font-size:20px ;
+		font-family:monospace;
+		width:60%;
+		margin-left: 20%;
+		text-align:center;
+		position:absolute;
+		animation: fadein 6s infinite;
+		animation: cre 6s infinite;
+	}
+	@-webkit-keyframes fadein{0%,100%{opacity:0}50%{opacity:1}}
+	@-webkit-keyframes cre {0%,100%{color: rgba(0,0,0,0)}50%{color:white}}
+	</style>
+	
+	<div id ="bc"> </div>
+	<div id ="fw">
+		<div id="msg" style="font-size:60px; ">Under elsewhere skies</div>
+		<br>
+		<span id="loc" style=" padding-top: 1%;margin-top:1%;border-top: 1px solid white"> 
+		</span>
+	</div>
+	
+	<script>
+		var clr = '#';
+		var clr2 = '#000000';
+		var date='';
+		function bcolor(){
+			var clt = '0123456789ABCDEF';
+			var ts= '0123456789';
+			var al= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+			var name ='';
+			var adj = ['Beautiful','Joyful','Amazing','Lonely','Melancholic','Meandering','starless','What a','warm'];
+			var days = ['day','morning','evening','midnight','dream','river','sun','fields','sea','weather','moon','memories'];
+			var ang = ['0','-70','-140','180','120','90'];
+			var angle='';
+			var ran = Math.random();
+			var pos='';date = '';
+			clr = '#';
+			for (var i = 0; i < 6; i++){
+				clr += clt[Math.floor(Math.random() * 16)];
+				date += ts.charAt(Math.floor(Math.random() * 10));
+				name += al.charAt(Math.floor(Math.random() * 36));} 
+			pos = Math.floor(ran* 100)+'% ';
+			angle = 'radial-gradient(farthest-corner at '+ pos+ ' '+pos+',white,'+ clr+',' + clr2+')';
+			console.log(angle);
+			clr2 = clr;
+			var lt = (ran * (90 - (-90)) + (-90) ).toFixed(3);
+			var lg = (ran * (180 - (-180)) + (-180)).toFixed(3);
+			var date = (ran * (999 - (0)) + (0)).toFixed(0)+' / '+(ran * (199 - (0)) + (0)).toFixed(0)+' / '+(ran * (99 - (10)) + (10)).toFixed(0);
+			document.getElementById("msg").innerHTML = adj[Math.floor(Math.random() * 10)]+' '+days[Math.floor(ran * 12)] ;
+			document.getElementById("loc").innerHTML = '@ '+name+', '+' '+lt +' '+lg +' on '+''+date ;
+			document.getElementById("bc").style.background = angle;}setInterval (bcolor, 6000);
+	</script>
 
 
 
