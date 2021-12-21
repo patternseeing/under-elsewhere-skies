@@ -1,60 +1,138 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" >
 	<title>Under elsewhere skies | patternseeing</title>
 
-
 	<style>
-	body { margin:0 ; overflow:hidden }
-	a { color:#eee ; text-decoration:none }
-	header { margin:0 ; padding:0 ; background-color:#444 ; color:#bbb ;
-		position:relative ; z-index:1000 }
-	header > h1 { margin:0 ; font-size:12px ; font-family:sans-serif ;
-		border-bottom:1px #999 solid ; padding:5px 10px ; line-height:17px }
+	body { margin:0 ;
+		overflow:hidden
+	}
+	a {
+		color:rgba(255,255,200,1) ;
+		text-decoration: none;
+	}
+	a:hover{
+		color:red;
+		transition: color 1s;
+	}
+
+	footer{
+
+position: absolute;
+bottom: 2%;
+		width:100%;
+		color:#bbb ;
+		justify-content: space-between;
+		display: flex;
+	z-index:200;
+
+	}
+
+.button{
+	padding: .6%;
+	font-family: arial;
+	background-color: rgba(0,0,0,.01);
+	color:white;
+	border: none;
+	font-size: 15px;
+}
+
+.button:hover{
+	background-color: rgba(255,0,0,.8);
+	transition:background 1s;
+cursor:pointer;
+}
+
+#bc{
+	transition:background 6s;
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:radial-gradient(white,rgba(0,0,120,.6));
+	animation: fadein 6s infinite;
+}
+#fw{
+	top:40%;
+	font-size:20px ;
+	font-family:monospace;
+	width:60%;
+	margin-left: 20%;
+	text-align:center;
+	position:absolute;
+	animation: fadein 6s infinite;
+	animation: cre 6s infinite;
+}
+#note{
+	display:none;
+	width:50%;
+	position:absolute;
+	background:linear-gradient(rgba(0,0,0,.6),rgba(255,255,255,.05));
+	padding:3%;
+	color:white;
+	font-family:arial;
+	left:25%;
+	bottom:10%;
+	line-height:1.7;
+
+}
+@-webkit-keyframes fadein{0%,100%{opacity:0}50%{opacity:1}}
+@-webkit-keyframes cre {0%,100%{color: rgba(0,0,0,0)}50%{color:white}}
+
 </style>
 </head>
 <body>
-<header id=nav>
-	<h1>
-		<a href="template.html">“Under elsewhere skies”</a> by
-		<a href="about.html#AUTHOR">patternseeing</a> :
-		
-	</h1>
-</header>
-<style>
-	#bc{
-		transition:background 6s;
-		width:100%;
-		height:100%;
-		position:fixed;
-		background:radial-gradient(white,rgba(0,0,120,.6));
-		animation: fadein 6s infinite;
-	}
-	#fw
-	{
-		top:40%;
-		font-size:20px ;
-		font-family:monospace;
-		width:60%;
-		margin-left: 20%;
-		text-align:center;
-		position:absolute;
-		animation: fadein 6s infinite;
-		animation: cre 6s infinite;
-	}
-	@-webkit-keyframes fadein{0%,100%{opacity:0}50%{opacity:1}}
-	@-webkit-keyframes cre {0%,100%{color: rgba(0,0,0,0)}50%{color:white}}
-	</style>
-	
+
+<footer>
+
+	<button class="button" onclick="gotoweb();" >patternseeing | 2021</button>
+	<button class="button" onclick="closing();" >Under elsewhere skies</button>
+	<button class="button" onclick="tweeting();" >Tweet</button>
+
+</footer>
+
 	<div id ="bc"> </div>
 	<div id ="fw">
 		<div id="msg" style="font-size:60px; ">Under elsewhere skies</div>
 		<br>
-		<span id="loc" style=" padding-top: 1%;margin-top:1%;border-top: 1px solid white"> 
+		<span id="loc" style=" padding-top: 1%;margin-top:1%;border-top: 1px solid white">
 		</span>
+
 	</div>
-	
+
+	<div id ="note" ; >
+		<div style="text-align:right;position:relative;   padding: .8%;  margin-left:50%">
+			<button class="button" onclick="closing();" style = "border:solid rgba(255,255,255,.25) 1px;width:50px;height:50px;border-radius: 50%;">✕</button>
+
+		</div>
+		<p>Sky, the vast canvas above at times, gives us stunning colors and lights, often become part of a memorable experience evoking deep human emotions and feelings about the world.
+		We capture and express our feelings about such moments with fellow beings under this vast canvas.
+		Exploring this thought further on the speculation of us becoming a multi-planetary species, What stunning atmospheric experiences we could witness on other planets?
+		And what emotions do they evoke?
+<br>
+		'Under elsewhere skies' is a generative system randomly sharing memories from imaginary worlds/planets.
+		A new memory under a unique sky background is shared every 6 seconds with the arbitrary location name, coordinates, and date.
+<a href="https://taper.badquar.to/6/under_elsewhere_skies.html">Under elsewhere skies</a> is part <a href="https://taper.badquar.to/6/">Taper#6</a> , a Web-based literary journal for short, computational work published  by <a href="https://badquar.to/"> Bad Quarto. </a>
+</p>
+
+
+	</div>
+
+
+	<script>
+	var nBool = false;
+		function closing(){
+			nBool =!nBool;
+			var n = document.getElementById("note");
+			if(nBool){
+					n.style.display = "block";
+}else{
+n.style.display = "none";
+}
+		}
+
+	</script>
+
 	<script>
 		var clr = '#';
 		var clr2 = '#000000';
@@ -64,8 +142,8 @@
 			var ts= '0123456789';
 			var al= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 			var name ='';
-			var adj = ['Beautiful','Joyful','Amazing','Lonely','Melancholic','Meandering','starless','What a','warm'];
-			var days = ['day','morning','evening','midnight','dream','river','sun','fields','sea','weather','moon','memories'];
+			var adj = ['Beautiful','Joyful','Amazing','Lonely','Melancholic','Meandering','Starless','What a','warm','dusty','deja vu','euphoric'];
+			var days = ['day','morning','evening','midnight','dream','river','sun','fields','sea','weather','moon','memories','dusts','space','light'];
 			var ang = ['0','-70','-140','180','120','90'];
 			var angle='';
 			var ran = Math.random();
@@ -74,7 +152,7 @@
 			for (var i = 0; i < 6; i++){
 				clr += clt[Math.floor(Math.random() * 16)];
 				date += ts.charAt(Math.floor(Math.random() * 10));
-				name += al.charAt(Math.floor(Math.random() * 36));} 
+				name += al.charAt(Math.floor(Math.random() * 36));}
 			pos = Math.floor(ran* 100)+'% ';
 			angle = 'radial-gradient(farthest-corner at '+ pos+ ' '+pos+',white,'+ clr+',' + clr2+')';
 			console.log(angle);
@@ -82,12 +160,25 @@
 			var lt = (ran * (90 - (-90)) + (-90) ).toFixed(3);
 			var lg = (ran * (180 - (-180)) + (-180)).toFixed(3);
 			var date = (ran * (999 - (0)) + (0)).toFixed(0)+' / '+(ran * (199 - (0)) + (0)).toFixed(0)+' / '+(ran * (99 - (10)) + (10)).toFixed(0);
-			document.getElementById("msg").innerHTML = adj[Math.floor(Math.random() * 10)]+' '+days[Math.floor(ran * 12)] ;
+			document.getElementById("msg").innerHTML = adj[Math.floor(Math.random() * (adj.length+1))]+' '+days[Math.floor(ran * (days.length+1))] ;
 			document.getElementById("loc").innerHTML = '@ '+name+', '+' '+lt +' '+lg +' on '+''+date ;
 			document.getElementById("bc").style.background = angle;}setInterval (bcolor, 6000);
 	</script>
+<script>
 
+function gotoweb() {
+window.open('https://patternseeing.wordpress.com/');
+}
 
+function tweeting(){
+window.open('https://twitter.com/share?url=https://elsewhereskies.netlify.app/&text=Explore Under elsewhere skies by @patternseeing');
+}
+
+function fbThis(){
+window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconstellationsoflove.netlify.app%2F&amp;src=sdkpreparse');
+}
+
+</script>
 
 </body>
 </html>
